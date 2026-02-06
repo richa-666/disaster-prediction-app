@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, ShieldCheck, Zap, ArrowRight, BarChart2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+    const { t } = useTranslation();
+
     return (
         <section className="relative bg-[#0B1120] text-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl overflow-hidden min-h-[500px] flex items-center">
             {/* Background Effects */}
@@ -30,18 +33,15 @@ const Hero = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                         </span>
-                        AI Prediction Active
+                        {t('hero.aiActive')}
                     </div>
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-                        AI-Powered <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
-                            Disaster Prediction System
-                        </span>
+                        {t('hero.title')}
                     </h1>
 
                     <p className="text-indigo-100 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Stay steps ahead with early warnings, real-time AI risk analysis, and comprehensive community safety monitoring.
+                        {t('hero.subtitle')}
                     </p>
 
                     {/* Trust Indicators */}
@@ -50,30 +50,30 @@ const Hero = () => {
                             <div className="p-2 bg-indigo-700/50 rounded-lg">
                                 <Activity className="w-5 h-5 text-blue-300" />
                             </div>
-                            <span className="text-sm font-medium text-indigo-100">Monitoring 5+<br />Disaster Types</span>
+                            <span className="text-sm font-medium text-indigo-100" dangerouslySetInnerHTML={{ __html: t('hero.monitoring') }}></span>
                         </div>
                         <div className="flex items-center gap-3 justify-center lg:justify-start">
                             <div className="p-2 bg-indigo-700/50 rounded-lg">
                                 <ShieldCheck className="w-5 h-5 text-green-300" />
                             </div>
-                            <span className="text-sm font-medium text-indigo-100">AI-Based<br />Risk Scoring</span>
+                            <span className="text-sm font-medium text-indigo-100" dangerouslySetInnerHTML={{ __html: t('hero.aiScoring') }}></span>
                         </div>
                         <div className="flex items-center gap-3 justify-center lg:justify-start">
                             <div className="p-2 bg-indigo-700/50 rounded-lg">
                                 <Zap className="w-5 h-5 text-yellow-300" />
                             </div>
-                            <span className="text-sm font-medium text-indigo-100">Real-Time<br />Prediction Engine</span>
+                            <span className="text-sm font-medium text-indigo-100" dangerouslySetInnerHTML={{ __html: t('hero.realTimeEngine') }}></span>
                         </div>
                     </div>
 
                     {/* Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                         <Link to="/dashboard" className="group flex items-center justify-center gap-2 bg-white text-indigo-900 font-bold py-4 px-8 rounded-xl hover:bg-indigo-50 transition-all duration-300 shadow-lg shadow-indigo-900/20 transform hover:-translate-y-1">
-                            View Live Dashboard
+                            {t('hero.cta')}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <button className="flex items-center justify-center gap-2 bg-transparent border-2 border-indigo-400 text-white font-semibold py-4 px-8 rounded-xl hover:bg-indigo-800/30 hover:border-indigo-300 transition-all duration-300">
-                            Explore Disaster Risks
+                            {t('hero.secondaryCta')}
                         </button>
                     </div>
                 </div>
@@ -96,10 +96,10 @@ const Hero = () => {
 
                         {/* Floating Data Points */}
                         <div className="absolute top-1/4 right-1/4 bg-white/10 backdrop-blur-md p-2 rounded-lg text-xs font-mono border border-white/20 animate-bounce" style={{ animationDuration: '3s' }}>
-                            Rainfall: 120mm
+                            {t('hero.rainfall')}: 120mm
                         </div>
                         <div className="absolute bottom-1/4 left-1/4 bg-white/10 backdrop-blur-md p-2 rounded-lg text-xs font-mono border border-white/20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
-                            Wind: 45km/h
+                            {t('hero.wind')}: 45km/h
                         </div>
                     </div>
                 </div>

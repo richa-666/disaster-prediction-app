@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { searchCities } from '../services/api';
+import { useTranslation } from 'react-i18next';
 
 const SearchBar = ({ onSearch }) => {
+    const { t } = useTranslation();
     const [query, setQuery] = useState('');
     const [disasterType, setDisasterType] = useState('flood');
     const [loading, setLoading] = useState(false);
@@ -66,7 +68,7 @@ const SearchBar = ({ onSearch }) => {
                 <input
                     type="text"
                     className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    placeholder="Search city (e.g., London, Tokyo)"
+                    placeholder={t('dashboard.searchPlaceholder')}
                     value={query}
                     onChange={(e) => {
                         setQuery(e.target.value);
@@ -82,10 +84,11 @@ const SearchBar = ({ onSearch }) => {
                     onChange={(e) => setDisasterType(e.target.value)}
                     className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                 >
-                    <option value="flood">Flood</option>
-                    <option value="earthquake">Earthquake</option>
-                    <option value="cyclone">Cyclone</option>
-                    <option value="heatwave">Heatwave</option>
+                    <option value="flood">{t('disasters.flood.name')}</option>
+                    <option value="earthquake">{t('disasters.earthquake.name')}</option>
+                    <option value="cyclone">{t('disasters.cyclone.name')}</option>
+                    <option value="heatwave">{t('disasters.heatwave.name')}</option>
+                    <option value="landslide">{t('disasters.landslide.name')}</option>
                 </select>
             </div>
 
@@ -112,7 +115,7 @@ const SearchBar = ({ onSearch }) => {
                 disabled={!query || loading}
                 className="inline-flex justify-center items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
             >
-                {loading ? 'Searching...' : 'Check Risk'}
+                {loading ? t('dashboard.searching') : t('dashboard.checkRisk')}
             </button>
         </form>
     );

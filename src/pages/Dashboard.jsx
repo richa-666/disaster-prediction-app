@@ -4,6 +4,7 @@ import PredictionCard from '../components/PredictionCard';
 import { Filter, RefreshCcw } from 'lucide-react';
 import { fetchPrediction } from '../services/api';
 import SearchBar from '../components/SearchBar';
+import { useTranslation } from 'react-i18next';
 
 // Configuration for Monitored Locations
 // In a real app, users might subscribe to these.
@@ -17,6 +18,7 @@ const MONITORED_LOCATIONS = [
 ];
 
 const Dashboard = () => {
+    const { t } = useTranslation();
     const [filter, setFilter] = useState('All');
     const [predictions, setPredictions] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -74,9 +76,9 @@ const Dashboard = () => {
         <div className="space-y-6">
             <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4 border-b border-gray-200 pb-6">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900">Live Risk Dashboard</h1>
+                    <h1 className="text-3xl font-bold text-gray-900">{t('dashboard.title')}</h1>
                     <p className="text-gray-500 mt-1">
-                        Real-time assessment for monitored regions
+                        {t('dashboard.subtitle')}
                     </p>
                 </div>
 
@@ -96,10 +98,10 @@ const Dashboard = () => {
                             value={filter}
                             onChange={(e) => setFilter(e.target.value)}
                         >
-                            <option value="All">All Risks</option>
-                            <option value="High">High Risk Only</option>
-                            <option value="Medium">Medium Risk Only</option>
-                            <option value="Low">Low Risk Only</option>
+                            <option value="All">{t('dashboard.filters.all')}</option>
+                            <option value="High">{t('dashboard.filters.high')}</option>
+                            <option value="Medium">{t('dashboard.filters.medium')}</option>
+                            <option value="Low">{t('dashboard.filters.low')}</option>
                         </select>
                     </div>
                 </div>
@@ -110,7 +112,7 @@ const Dashboard = () => {
             {loading ? (
                 <div className="flex flex-col items-center justify-center py-20">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mb-4"></div>
-                    <p className="text-gray-500">Analyzing latest satellite data...</p>
+                    <p className="text-gray-500">{t('dashboard.analyzingData')}</p>
                 </div>
             ) : (
                 <div className="grid gap-4">

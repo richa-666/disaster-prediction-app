@@ -1,0 +1,90 @@
+{
+    "appTitle": "DisasterGuard",
+    "details": {
+        "commonCauses": "Häufige Ursachen",
+        "safetyTips": "Sicherheitstipps",
+        "backHome": "Zurück zur Startseite",
+        "liveAssessment": "Live-KI-Bewertung",
+        "updatesRealTime": "Aktualisierungen in Echtzeit",
+        "confidenceScore": "Vertrauenswert",
+        "window": "Zeitfenster",
+        "probability": "Wahrscheinlichkeit",
+        "notFound": "Katastrophe nicht gefunden",
+        "returnHome": "Zurück zur Startseite"
+    },
+    "home": {
+        "monitoredDisasters": "Überwachte Katastrophen",
+        "viewRiskAnalysis": "Risikoanalyse anzeigen"
+    },
+    "disasters": {
+        "earthquake": {
+            "name": "Erdbeben",
+            "description": "Plötzliches Erschüttern des Bodens durch seismische Wellen."
+        },
+        "flood": {
+            "name": "Überschwemmung",
+            "description": "Überlaufen von Wasser auf normalerweise trockenes Land."
+        },
+        "cyclone": {
+            "name": "Zyklon",
+            "description": "Großräumige Luftmasse, die um ein starkes Tiefdruckgebiet rotiert."
+        },
+        "landslide": {
+            "name": "Erdrutsch",
+            "description": "Bewegung einer Gesteins- oder Erdmasse einen Hang hinab."
+        },
+        "heatwave": {
+            "name": "Hitzewelle",
+            "description": "Zeitraum mit extrem heißem Wetter, oft begleitet von hoher Luftfeuchtigkeit."
+        }
+    },
+    "nav": {
+        "home": "Startseite",
+        "dashboard": "Instrumententafel",
+        "alerts": "Warnungen"
+    },
+    "hero": {
+        "title": "KI-gestützte Katastrophenvorhersage",
+        "subtitle": "Echtzeit-Risikobewertung unter Verwendung von Satellitendaten und fortgeschrittenen historischen Modellen.",
+        "cta": "Live-Risiken prüfen",
+        "secondaryCta": "Warnungen anzeigen",
+        "aiActive": "KI-Vorhersage aktiv",
+        "monitoring": "Überwachung von 5+<br />Katastrophenarten",
+        "aiScoring": "KI-basierte<br />Risikobewertung",
+        "realTimeEngine": "Echtzeit-<br />Vorhersage-Engine",
+        "rainfall": "Niederschlag",
+        "wind": "Wind"
+    },
+    "footer": {
+        "tagline": "KI-gestützte Risikobewertung & Vorhersage",
+        "copyright": "© 2024 DisasterGuard System. Alle Rechte vorbehalten.",
+        "emergency": "Notfallkontakt: 112 (Universal) | 911 (US)"
+    },
+    "dashboard": {
+        "title": "Live-Risiko-Dashboard",
+        "subtitle": "Echtzeitbewertung für überwachte Regionen",
+        "searchPlaceholder": "Stadt suchen (z.B. Berlin, München)",
+        "checkRisk": "Risiko prüfen",
+        "filters": {
+            "all": "Alle Risiken",
+            "high": "Nur hohes Risiko",
+            "medium": "Nur mittleres Risiko",
+            "low": "Nur geringes Risiko"
+        },
+        "noPredictions": "Keine Vorhersagen für diesen Filter gefunden.",
+        "searching": "Suche läuft...",
+        "analyzingData": "Analysiere neueste Satellitendaten..."
+    },
+    "riskLevel": {
+        "high": "Hohes Risiko",
+        "medium": "Mittleres Risiko",
+        "low": "Geringes Risiko"
+    },
+    "card": {
+        "probability": "Wahrscheinlichkeit",
+        "viewAnalysis": "KI-Analyse anzeigen",
+        "hideAnalysis": "KI-Analyse ausblenden",
+        "fullDetails": "Vollständige Details",
+        "insight": "Antigravity Einblick"
+    }
+}

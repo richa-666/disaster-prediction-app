@@ -1,0 +1,142 @@
+{
+    "appTitle": "DisasterGuard",
+    "details": {
+        "commonCauses": "Common Causes",
+        "safetyTips": "Safety Tips",
+        "backHome": "Back to Home",
+        "liveAssessment": "Live AI Assessment",
+        "updatesRealTime": "Updates in real-time",
+        "confidenceScore": "Confidence Score",
+        "window": "Window",
+        "probability": "Probability",
+        "notFound": "Disaster not found",
+        "returnHome": "Return Home"
+    },
+    "nav": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "alerts": "Alerts"
+    },
+    "hero": {
+        "title": "AI-Powered Disaster Prediction",
+        "subtitle": "Real-time risk assessment using standard satellite data and advanced historical models.",
+        "cta": "Check Live Risks",
+        "secondaryCta": "View Alerts",
+        "aiActive": "AI Prediction Active",
+        "monitoring": "Monitoring 5+<br />Disaster Types",
+        "aiScoring": "AI-Based<br />Risk Scoring",
+        "realTimeEngine": "Real-Time<br />Prediction Engine",
+        "rainfall": "Rainfall",
+        "wind": "Wind"
+    },
+    "footer": {
+        "tagline": "AI-Powered Risk Assessment & Prediction",
+        "copyright": "© 2024 DisasterGuard System. All rights reserved.",
+        "emergency": "Emergency Contact: 112 (Universal) | 911 (US)"
+    },
+    "dashboard": {
+        "title": "Live Risk Dashboard",
+        "subtitle": "Real-time assessment for monitored regions",
+        "searchPlaceholder": "Search city (e.g., London, Tokyo)",
+        "checkRisk": "Check Risk",
+        "filters": {
+            "all": "All Risks",
+            "high": "High Risk Only",
+            "medium": "Medium Risk Only",
+            "low": "Low Risk Only"
+        },
+        "noPredictions": "No predictions found for this filter.",
+        "searching": "Searching...",
+        "analyzingData": "Analyzing latest satellite data..."
+    },
+    "riskLevel": {
+        "high": "High Risk",
+        "medium": "Medium Risk",
+        "low": "Low Risk"
+    },
+    "card": {
+        "probability": "Probability",
+        "viewAnalysis": "View AI Analysis",
+        "hideAnalysis": "Hide AI Analysis",
+        "fullDetails": "Full Details",
+        "insight": "Antigravity Insight"
+    },
+    "home": {
+        "monitoredDisasters": "Monitored Disasters",
+        "viewRiskAnalysis": "View Risk Analysis"
+    },
+    "disasters": {
+        "earthquake": {
+            "name": "Earthquake",
+            "description": "Sudden shaking of the ground caused by seismic waves.",
+            "causes": [
+                "Tectonic plate movements",
+                "Volcanic eruptions",
+                "Underground explosions"
+            ],
+            "safetyTips": [
+                "Drop, Cover, and Hold On.",
+                "Stay away from windows and glass.",
+                "If outdoors, stay away from buildings and trees."
+            ]
+        },
+        "flood": {
+            "name": "Flood",
+            "description": "Overflow of water that submerges land that is usually dry.",
+            "causes": [
+                "Heavy rainfall",
+                "Overflowing rivers",
+                "Dam failure",
+                "Melting snow/ice"
+            ],
+            "safetyTips": [
+                "Move to higher ground immediately.",
+                "Do not walk or drive through floodwaters.",
+                "Disconnect electrical appliances."
+            ]
+        },
+        "cyclone": {
+            "name": "Cyclone",
+            "description": "Large scale air mass that rotates around a strong center of low atmospheric pressure.",
+            "causes": [
+                "Warm ocean waters",
+                "Atmospheric instability",
+                "Coriolis force"
+            ],
+            "safetyTips": [
+                "Secure loose outdoor items.",
+                "Board up windows.",
+                "Evacuate if advised by authorities."
+            ]
+        },
+        "landslide": {
+            "name": "Landslide",
+            "description": "Movement of a mass of rock, debris, or earth down a slope.",
+            "causes": [
+                "Heavy rain",
+                "Earthquakes",
+                "Volcanic eruptions",
+                "Slope erosion"
+            ],
+            "safetyTips": [
+                "Stay alert and awake.",
+                "Listen for unusual sounds like trees cracking.",
+                "Move out of the path of landslides/debris flow."
+            ]
+        },
+        "heatwave": {
+            "name": "Heatwave",
+            "description": "Period of excessively hot weather, which may be accompanied by high humidity.",
+            "causes": [
+                "High pressure systems",
+                "Climate change",
+                "Urban heat island effect"
+            ],
+            "safetyTips": [
+                "Stay hydrated.",
+                "Avoid strenuous activities.",
+                "Stay cool indoors."
+            ]
+        }
+    }
+}

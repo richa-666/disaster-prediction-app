@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import RiskBadge from './RiskBadge';
 import { MapPin, Calendar, Info, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const PredictionCard = ({ prediction, disasterName, Icon }) => {
+    const { t } = useTranslation();
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -14,7 +16,7 @@ const PredictionCard = ({ prediction, disasterName, Icon }) => {
                         {Icon && <Icon className="w-6 h-6" />}
                     </div>
                     <div>
-                        <h4 className="text-lg font-bold text-slate-900">{disasterName}</h4>
+                        <h4 className="text-lg font-bold text-slate-900">{t(`disasters.${prediction.disasterId}.name`)}</h4>
                         <div className="flex flex-col sm:flex-row sm:items-center text-slate-500 text-sm mt-1 gap-2 sm:gap-4">
                             <span className="flex items-center"><MapPin className="w-3.5 h-3.5 mr-1" /> {prediction.location}</span>
                             <span className="flex items-center"><Calendar className="w-3.5 h-3.5 mr-1" /> {prediction.expectedTime}</span>
@@ -25,7 +27,7 @@ const PredictionCard = ({ prediction, disasterName, Icon }) => {
                 <div className="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto mt-2 md:mt-0 pl-14 md:pl-0 gap-4 md:gap-0">
                     <RiskBadge riskLevel={prediction.riskLevel} className="mb-0 md:mb-2" />
                     <div className="flex items-center text-sm font-medium text-slate-700">
-                        <span>Probability:</span>
+                        <span>{t('card.probability')}:</span>
                         <span className={`ml-1 text-lg font-bold ${prediction.probability > 70 ? 'text-red-600' : 'text-slate-900'}`}>
                             {prediction.probability}%
                         </span>
@@ -42,11 +44,11 @@ const PredictionCard = ({ prediction, disasterName, Icon }) => {
                     >
                         {expanded ? (
                             <>
-                                <ChevronUp className="w-4 h-4 mr-1" /> Hide AI Analysis
+                                <ChevronUp className="w-4 h-4 mr-1" /> {t('card.hideAnalysis')}
                             </>
                         ) : (
                             <>
-                                <ChevronDown className="w-4 h-4 mr-1" /> View AI Analysis
+                                <ChevronDown className="w-4 h-4 mr-1" /> {t('card.viewAnalysis')}
                             </>
                         )}
                     </button>
@@ -56,7 +58,7 @@ const PredictionCard = ({ prediction, disasterName, Icon }) => {
                         state={{ prediction }}
                         className="text-sm font-medium text-slate-500 hover:text-slate-800 flex items-center"
                     >
-                        Full Details <ArrowRight className="w-4 h-4 ml-1" />
+                        {t('card.fullDetails')} <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
                 </div>
 
@@ -65,7 +67,7 @@ const PredictionCard = ({ prediction, disasterName, Icon }) => {
                         <div className="flex items-start gap-2">
                             <Info className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
                             <div>
-                                <strong className="block text-slate-900 mb-1">Antigravity Insight:</strong>
+                                <strong className="block text-slate-900 mb-1">{t('card.insight')}:</strong>
                                 {prediction.explanation}
                             </div>
                         </div>

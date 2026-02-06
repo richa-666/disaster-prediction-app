@@ -1,0 +1,142 @@
+{
+    "appTitle": "DisasterGuard",
+    "details": {
+        "commonCauses": "常见原因",
+        "safetyTips": "安全提示",
+        "backHome": "返回首页",
+        "liveAssessment": "实时AI评估",
+        "updatesRealTime": "实时更新",
+        "confidenceScore": "置信度评分",
+        "window": "时间窗口",
+        "probability": "概率",
+        "notFound": "未找到灾害信息",
+        "returnHome": "返回首页"
+    },
+    "nav": {
+        "home": "首页",
+        "dashboard": "仪表板",
+        "alerts": "警报"
+    },
+    "hero": {
+        "title": "AI驱动的灾害预测",
+        "subtitle": "利用卫星数据和先进的历史模型进行实时风险评估。",
+        "cta": "查看实时风险",
+        "secondaryCta": "查看警报",
+        "aiActive": "AI预测已激活",
+        "monitoring": "监控5种以上<br />灾害类型",
+        "aiScoring": "基于AI的<br />风险评分",
+        "realTimeEngine": "实时<br />预测引擎",
+        "rainfall": "降雨量",
+        "wind": "风速"
+    },
+    "footer": {
+        "tagline": "AI驱动的风险评估与预测",
+        "copyright": "© 2024 DisasterGuard System. 保留所有权利。",
+        "emergency": "紧急联系: 112 (通用) | 911 (美国)"
+    },
+    "dashboard": {
+        "title": "实时风险仪表板",
+        "subtitle": "受监控区域的实时评估",
+        "searchPlaceholder": "搜索城市 (例如: 北京, 上海)",
+        "checkRisk": "检查风险",
+        "filters": {
+            "all": "所有风险",
+            "high": "仅高风险",
+            "medium": "仅中等风险",
+            "low": "仅低风险"
+        },
+        "noPredictions": "未找到符合此过滤条件的预测。",
+        "searching": "搜索中...",
+        "analyzingData": "正在分析最新卫星数据..."
+    },
+    "riskLevel": {
+        "high": "高风险",
+        "medium": "中等风险",
+        "low": "低风险"
+    },
+    "card": {
+        "probability": "概率",
+        "viewAnalysis": "查看AI分析",
+        "hideAnalysis": "隐藏AI分析",
+        "fullDetails": "查看详情",
+        "insight": "Antigravity 洞察"
+    },
+    "home": {
+        "monitoredDisasters": "受监控的灾害",
+        "viewRiskAnalysis": "查看风险分析"
+    },
+    "disasters": {
+        "earthquake": {
+            "name": "地震",
+            "description": "由地震波引起的地面突然震动。",
+            "causes": [
+                "板块运动",
+                "火山爆发",
+                "地下爆炸"
+            ],
+            "safetyTips": [
+                "趴下，掩护，抓牢。",
+                "远离窗户和玻璃。",
+                "如果在户外，远离建筑物和树木。"
+            ]
+        },
+        "flood": {
+            "name": "洪水",
+            "description": "淹没通常干燥土地的水流溢出。",
+            "causes": [
+                "强降雨",
+                "河流泛滥",
+                "大坝溃决",
+                "融雪/冰"
+            ],
+            "safetyTips": [
+                "立即转移到高处。",
+                "不要在洪水中行走或驾驶。",
+                "断开电器连接。"
+            ]
+        },
+        "cyclone": {
+            "name": "气旋",
+            "description": "围绕低气压中心旋转的大规模气团。",
+            "causes": [
+                "温暖的海水",
+                "大气不稳定",
+                "科里奥利力"
+            ],
+            "safetyTips": [
+                "固定户外松散物品。",
+                "用木板封住窗户。",
+                "如果当局建议，请撤离。"
+            ]
+        },
+        "landslide": {
+            "name": "滑坡",
+            "description": "岩石、碎片或土体沿斜坡向下的运动。",
+            "causes": [
+                "大雨",
+                "地震",
+                "火山爆发",
+                "斜坡侵蚀"
+            ],
+            "safetyTips": [
+                "保持警惕和清醒。",
+                "注意听树木断裂等异常声音。",
+                "避开滑坡/泥石流的路径。"
+            ]
+        },
+        "heatwave": {
+            "name": "热浪",
+            "description": "一段极其炎热的天气，可能伴有高湿度。",
+            "causes": [
+                "高压系统",
+                "气候变化",
+                "城市热岛效应"
+            ],
+            "safetyTips": [
+                "保持水分。",
+                "避免剧烈活动。",
+                "在室内保持凉爽。"
+            ]
+        }
+    }
+}

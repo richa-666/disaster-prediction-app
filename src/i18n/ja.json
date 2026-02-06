@@ -1,0 +1,142 @@
+{
+    "appTitle": "DisasterGuard",
+    "details": {
+        "commonCauses": "一般的な原因",
+        "safetyTips": "安全のヒント",
+        "backHome": "ホームに戻る",
+        "liveAssessment": "ライブAI評価",
+        "updatesRealTime": "リアルタイムで更新",
+        "confidenceScore": "信頼度スコア",
+        "window": "時間枠",
+        "probability": "確率",
+        "notFound": "災害が見つかりません",
+        "returnHome": "ホームに戻る"
+    },
+    "nav": {
+        "home": "ホーム",
+        "dashboard": "ダッシュボード",
+        "alerts": "アラート"
+    },
+    "hero": {
+        "title": "AI搭載の災害予測",
+        "subtitle": "標準的な衛星データと高度な履歴モデルを使用したリアルタイムのリスク評価。",
+        "cta": "ライブリスクを確認",
+        "secondaryCta": "アラートを表示",
+        "aiActive": "AI予測がアクティブ",
+        "monitoring": "5種類以上の<br />災害を監視中",
+        "aiScoring": "AIベースの<br />リスクスコアリング",
+        "realTimeEngine": "リアルタイム<br />予測エンジン",
+        "rainfall": "降水量",
+        "wind": "風速"
+    },
+    "footer": {
+        "tagline": "AI搭載のリスク評価および予測",
+        "copyright": "© 2024 DisasterGuard System. 無断複写・転載を禁じます。",
+        "emergency": "緊急連絡先: 112 (共通) | 911 (米国)"
+    },
+    "dashboard": {
+        "title": "ライブリスクダッシュボード",
+        "subtitle": "監視対象地域のリアルタイム評価",
+        "searchPlaceholder": "都市を検索 (例: 東京, 大阪)",
+        "checkRisk": "リスクを確認",
+        "filters": {
+            "all": "すべてのリスク",
+            "high": "高リスクのみ",
+            "medium": "中リスクのみ",
+            "low": "低リスクのみ"
+        },
+        "noPredictions": "このフィルターの予測は見つかりませんでした。",
+        "searching": "検索中...",
+        "analyzingData": "最新の衛星データを分析中..."
+    },
+    "riskLevel": {
+        "high": "高リスク",
+        "medium": "中リスク",
+        "low": "低リスク"
+    },
+    "card": {
+        "probability": "確率",
+        "viewAnalysis": "AI分析を表示",
+        "hideAnalysis": "AI分析を非表示",
+        "fullDetails": "詳細を見る",
+        "insight": "Antigravity インサイト"
+    },
+    "home": {
+        "monitoredDisasters": "監視中の災害",
+        "viewRiskAnalysis": "リスク分析を見る"
+    },
+    "disasters": {
+        "earthquake": {
+            "name": "地震",
+            "description": "地震波によって引き起こされる地面の突然の揺れ。",
+            "causes": [
+                "プレートの動き",
+                "火山噴火",
+                "地下爆発"
+            ],
+            "safetyTips": [
+                "姿勢を低くし、頭を守り、動かない。",
+                "窓やガラスから離れる。",
+                "屋外にいる場合は、建物や木から離れる。"
+            ]
+        },
+        "flood": {
+            "name": "洪水",
+            "description": "通常は乾燥している土地を水没させる水の氾濫。",
+            "causes": [
+                "大雨",
+                "河川の氾濫",
+                "ダムの決壊",
+                "雪/氷の融解"
+            ],
+            "safetyTips": [
+                "直ちに高台に移動する。",
+                "洪水の中を歩いたり運転したりしない。",
+                "電気製品のプラグを抜く。"
+            ]
+        },
+        "cyclone": {
+            "name": "サイクロン",
+            "description": "低気圧の強い中心の周りを回転する大規模な空気の塊。",
+            "causes": [
+                "暖かい海水",
+                "大気不安定",
+                "コリオリの力"
+            ],
+            "safetyTips": [
+                "屋外の緩んだものを固定する。",
+                "窓を板で覆う。",
+                "当局の指示がある場合は避難する。"
+            ]
+        },
+        "landslide": {
+            "name": "地滑り",
+            "description": "岩、瓦礫、または土の塊が斜面を下る動き。",
+            "causes": [
+                "大雨",
+                "地震",
+                "火山噴火",
+                "斜面浸食"
+            ],
+            "safetyTips": [
+                "警戒を怠らず、起きている。",
+                "木が割れるような異常な音に注意する。",
+                "地滑り/土石流の進路から避難する。"
+            ]
+        },
+        "heatwave": {
+            "name": "熱波",
+            "description": "過度に暑い天候が続く期間。高湿度を伴うことがある。",
+            "causes": [
+                "高気圧システム",
+                "気候変動",
+                "都市ヒートアイランド現象"
+            ],
+            "safetyTips": [
+                "水分補給をする。",
+                "激しい運動を避ける。",
+                "屋内を涼しく保つ。"
+            ]
+        }
+    }
+}

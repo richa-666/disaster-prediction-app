@@ -3,8 +3,10 @@ import { useParams, Link, useLocation } from 'react-router-dom';
 import { disasters } from '../data/disasters';
 import { ArrowLeft, Activity, ShieldCheck, AlertTriangle, Clock, MapPin } from 'lucide-react';
 import RiskBadge from '../components/RiskBadge';
+import { useTranslation } from 'react-i18next';
 
 const DisasterDetails = () => {
+    const { t } = useTranslation();
     const { id } = useParams();
     const location = useLocation();
     const prediction = location.state?.prediction;
@@ -13,18 +15,26 @@ const DisasterDetails = () => {
     if (!disaster) {
         return (
             <div className="text-center py-20">
-                <h2 className="text-2xl font-bold text-gray-700">Disaster not found</h2>
-                <Link to="/" className="text-blue-600 hover:underline mt-4 inline-block">Return Home</Link>
+                <h2 className="text-2xl font-bold text-gray-700">{t('details.notFound')}</h2>
+                <Link to="/" className="text-blue-600 hover:underline mt-4 inline-block">{t('details.returnHome')}</Link>
             </div>
         );
     }
 
-    const { name, icon: Icon, description, causes, safetyTips } = disaster;
+    const { icon: Icon } = disaster;
+    const name = t(`disasters.${id}.name`);
+    const description = t(`disasters.${id}.description`);
+    const causes = t(`disasters.${id}.causes`, { returnObjects: true });
+    const safetyTips = t(`disasters.${id}.safetyTips`, { returnObjects: true });
+
+    // Handle array fallback if t returns key (happens if missing) or valid array
+    const safeCauses = Array.isArray(causes) ? causes : [];
+    const safeSafetyTips = Array.isArray(safetyTips) ? safetyTips : [];
 
     return (
         <div className="max-w-4xl mx-auto animate-fade-in-up">
             <Link to="/" className="inline-flex items-center text-gray-500 hover:text-indigo-600 mb-6 transition-colors font-medium">
-                <ArrowLeft className="w-4 h-4 mr-1" /> Back to Home
+                <ArrowLeft className="w-4 h-4 mr-1" /> {t('details.backHome')}
             </Link>
 
             {/* Live Prediction Banner */}
@@ -33,9 +43,9 @@ const DisasterDetails = () => {
                     <div className="bg-indigo-600 px-8 py-4 flex justify-between items-center">
                         <div className="flex items-center space-x-2 text-white">
                             <AlertTriangle className="w-5 h-5" />
-                            <span className="font-bold tracking-wide uppercase text-sm">Live AI Assessment</span>
+                            <span className="font-bold tracking-wide uppercase text-sm">{t('details.liveAssessment')}</span>
                         </div>
-                        <span className="text-indigo-100 text-sm font-medium">Updates in real-time</span>
+                        <span className="text-indigo-100 text-sm font-medium">{t('details.updatesRealTime')}</span>
                     </div>
                     <div className="p-8">
                         <div className="flex flex-col md:flex-row gap-6 justify-between items-start">
@@ -43,13 +53,13 @@ const DisasterDetails = () => {
                                 <h2 className="text-2xl font-bold text-gray-900 mb-2">{prediction.location}</h2>
                                 <p className="text-gray-600 leading-relaxed mb-4 max-w-xl">{prediction.explanation}</p>
                                 <div className="flex items-center gap-4 text-sm text-gray-500">
-                                    <span className="flex items-center"><Clock className="w-4 h-4 mr-1" /> Window: {prediction.expectedTime}</span>
-                                    <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" /> Probability: {prediction.probability}%</span>
+                                    <span className="flex items-center"><Clock className="w-4 h-4 mr-1" /> {t('details.window')}: {prediction.expectedTime}</span>
+                                    <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" /> {t('details.probability')}: {prediction.probability}%</span>
                                 </div>
                             </div>
                             <div className="flex flex-col items-end">
                                 <RiskBadge riskLevel={prediction.riskLevel} className="scale-125 origin-right mb-2" />
-                                <span className="text-xs text-gray-400 font-medium">Confidence Score</span>
+                                <span className="text-xs text-gray-400 font-medium">{t('details.confidenceScore')}</span>
                             </div>
                         </div>
                     </div>
@@ -77,10 +87,10 @@ const DisasterDetails = () => {
                         <section>
                             <div className="flex items-center gap-2 mb-6 text-indigo-700 pb-2 border-b border-indigo-100">
                                 <Activity className="w-6 h-6" />
-                                <h2 className="text-xl font-bold uppercase tracking-wide">Common Causes</h2>
+                                <h2 className="text-xl font-bold uppercase tracking-wide">{t('details.commonCauses')}</h2>
                             </div>
                             <ul className="space-y-4">
-                                {causes.map((cause, idx) => (
+                                {safeCauses.map((cause, idx) => (
                                     <li key={idx} className="flex items-start text-gray-700 group">
                                         <span className="w-2 h-2 bg-indigo-400 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:bg-indigo-600 transition-colors"></span>
                                         <span className="leading-relaxed">{cause}</span>
@@ -92,10 +102,10 @@ const DisasterDetails = () => {
                         <section>
                             <div className="flex items-center gap-2 mb-6 text-emerald-700 pb-2 border-b border-emerald-100">
                                 <ShieldCheck className="w-6 h-6" />
-                                <h2 className="text-xl font-bold uppercase tracking-wide">Safety Tips</h2>
+                                <h2 className="text-xl font-bold uppercase tracking-wide">{t('details.safetyTips')}</h2>
                             </div>
                             <ul className="space-y-3">
-                                {safetyTips.map((tip, idx) => (
+                                {safeSafetyTips.map((tip, idx) => (
                                     <li key={idx} className="bg-emerald-50 p-4 rounded-xl text-emerald-800 text-sm border-l-4 border-emerald-400 shadow-sm">
                                         {tip}
                                     </li>
