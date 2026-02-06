@@ -1,10 +1,13 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { disasters } from '../data/disasters';
-import { ArrowLeft, Activity, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Activity, ShieldCheck, AlertTriangle, Clock, MapPin } from 'lucide-react';
+import RiskBadge from '../components/RiskBadge';
 
 const DisasterDetails = () => {
     const { id } = useParams();
+    const location = useLocation();
+    const prediction = location.state?.prediction;
     const disaster = disasters.find(d => d.id === id);
 
     if (!disaster) {
@@ -23,6 +26,35 @@ const DisasterDetails = () => {
             <Link to="/" className="inline-flex items-center text-gray-500 hover:text-indigo-600 mb-6 transition-colors font-medium">
                 <ArrowLeft className="w-4 h-4 mr-1" /> Back to Home
             </Link>
+
+            {/* Live Prediction Banner */}
+            {prediction && (
+                <div className="bg-white rounded-3xl shadow-lg border border-indigo-100 overflow-hidden mb-8">
+                    <div className="bg-indigo-600 px-8 py-4 flex justify-between items-center">
+                        <div className="flex items-center space-x-2 text-white">
+                            <AlertTriangle className="w-5 h-5" />
+                            <span className="font-bold tracking-wide uppercase text-sm">Live AI Assessment</span>
+                        </div>
+                        <span className="text-indigo-100 text-sm font-medium">Updates in real-time</span>
+                    </div>
+                    <div className="p-8">
+                        <div className="flex flex-col md:flex-row gap-6 justify-between items-start">
+                            <div>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-2">{prediction.location}</h2>
+                                <p className="text-gray-600 leading-relaxed mb-4 max-w-xl">{prediction.explanation}</p>
+                                <div className="flex items-center gap-4 text-sm text-gray-500">
+                                    <span className="flex items-center"><Clock className="w-4 h-4 mr-1" /> Window: {prediction.expectedTime}</span>
+                                    <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" /> Probability: {prediction.probability}%</span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col items-end">
+                                <RiskBadge riskLevel={prediction.riskLevel} className="scale-125 origin-right mb-2" />
+                                <span className="text-xs text-gray-400 font-medium">Confidence Score</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden mb-8 border border-gray-100">
                 <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-8 md:p-12 text-white relative overflow-hidden">
